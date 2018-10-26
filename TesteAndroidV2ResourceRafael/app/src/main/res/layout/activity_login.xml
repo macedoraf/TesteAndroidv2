@@ -18,7 +18,7 @@
 
     <EditText
         android:id="@+id/edt_user"
-        style="AppTheme.EditText"
+        style="@style/AppTheme.EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -33,7 +33,7 @@
 
     <EditText
         android:id="@+id/edt_password"
-        style="AppTheme.EditText"
+        style="@style/AppTheme.EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"

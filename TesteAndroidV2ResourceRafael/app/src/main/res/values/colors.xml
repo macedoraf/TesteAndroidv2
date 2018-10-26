@@ -6,4 +6,5 @@
 
 
     <color name="branco">#ffffff</color>
+    <color name="edt_border">#A8B4C4</color>
 </resources>

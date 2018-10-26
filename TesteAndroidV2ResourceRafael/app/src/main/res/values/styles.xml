@@ -24,7 +24,7 @@
 
     <style name="AppTheme.EditText">
         <item name="android:background">@drawable/edt_text</item>
-        
+
     </style>
 
 
