@@ -7,4 +7,10 @@
     <string name="conta_de_luz">Conta de Luz</string>
     <string name="pagamento">Pagamento</string>
     <string name="moc_data">12/12/2018</string>
+    <string name="conta">Conta</string>
+    <string name="moc_conta">2050 / 01.111222–4</string>
+    <string name="saldo">Saldo</string>
+    <string name="moc_nome_usuario">Jose da Silva Teste</string>
+    <string name="recentes">Recentes</string>
+    <string name="moc_valor_dinheiro">R$ 1.000,00</string>
 </resources>

@@ -13,4 +13,10 @@
     <color name="btn_color">@color/colorPrimary</color>
     <color name="cinza_claro">#A8B4C4</color>
     <color name="cinza_escuro">#485465</color>
+
+    <color name="branco_escuro">#485465</color>
+
+
+
+
 </resources>

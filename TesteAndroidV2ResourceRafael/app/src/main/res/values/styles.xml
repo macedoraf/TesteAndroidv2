@@ -58,6 +58,14 @@
         <item name="android:textColor">@color/cinza_claro</item>
     </style>
 
+    <style name="AppTheme.FonteHalvetica.Branco">
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+    <style name="AppTheme.FonteHalveticaLight.Branco">
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
 
 
 </resources>
