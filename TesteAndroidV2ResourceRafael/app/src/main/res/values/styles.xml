@@ -29,4 +29,35 @@
     </style>
 
 
+    <style name="AppTheme.FonteHalvetica">
+        <item name="android:textColor">@color/cinza_escuro</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/helvetica-neue</item>
+    </style>
+
+    <style name="AppTheme.FonteHalveticaLight">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/cinza_escuro</item>
+        <item name="android:fontFamily">@font/helvetica-neue</item>
+    </style>
+
+    <style name="AppTheme.FonteHalveticaLight.Preto">
+        <item name="android:textColor">@color/preto</item>
+    </style>
+
+    <style name="AppTheme.FonteHalveticaLight.Cinza">
+        <item name="android:textColor">@color/cinza_claro</item>
+    </style>
+
+
+    <style name="AppTheme.FonteHalvetica.Preto">
+        <item name="android:textColor">@color/preto</item>
+    </style>
+
+    <style name="AppTheme.FonteHalvetica.Cinza">
+        <item name="android:textColor">@color/cinza_claro</item>
+    </style>
+
+
+
 </resources>

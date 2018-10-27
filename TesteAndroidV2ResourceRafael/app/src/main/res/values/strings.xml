@@ -3,4 +3,8 @@
     <string name="user">User</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="moc_valor_currency">R$:1000,00</string>
+    <string name="conta_de_luz">Conta de Luz</string>
+    <string name="pagamento">Pagamento</string>
+    <string name="moc_data">12/12/2018</string>
 </resources>
