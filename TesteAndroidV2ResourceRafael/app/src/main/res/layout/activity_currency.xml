@@ -101,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            tools:context="br.com.rafael.main.CurrencyActivity">
+            tools:context="br.com.rafael.main.ui.CurrencyActivity">
 
             <TextView
                 android:id="@+id/lblTituloRecentes"

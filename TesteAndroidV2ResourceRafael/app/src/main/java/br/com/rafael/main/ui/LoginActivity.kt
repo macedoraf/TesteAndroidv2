@@ -1,4 +1,4 @@
-package br.com.rafael.main
+package br.com.rafael.main.ui
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -11,7 +11,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        intent  = Intent(this,CurrencyActivity::class.java)
+        intent  = Intent(this, CurrencyActivity::class.java)
         startActivity(intent)
     }
 }

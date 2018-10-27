@@ -61,6 +61,10 @@ dependencies {
      * Anko
      */
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
+
+    /**
+     * Google Design
+     */
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
 
