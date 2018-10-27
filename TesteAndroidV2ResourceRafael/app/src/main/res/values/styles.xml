@@ -32,13 +32,13 @@
     <style name="AppTheme.FonteHalvetica">
         <item name="android:textColor">@color/cinza_escuro</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/helvetica-neue</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
     </style>
 
     <style name="AppTheme.FonteHalveticaLight">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/cinza_escuro</item>
-        <item name="android:fontFamily">@font/helvetica-neue</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
     </style>
 
     <style name="AppTheme.FonteHalveticaLight.Preto">
