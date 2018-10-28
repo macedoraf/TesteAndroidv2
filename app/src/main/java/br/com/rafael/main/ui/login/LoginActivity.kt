@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityInput {
         edtUser = findViewById(R.id.edt_user)
         edtPassword = findViewById(R.id.edt_password)
         btnLogin = findViewById(R.id.btnLogin)
-        progressBar = findViewById(R.id.progressBar)
+        progressBar = findViewById(R.id.progress_bar)
 
     }
 
