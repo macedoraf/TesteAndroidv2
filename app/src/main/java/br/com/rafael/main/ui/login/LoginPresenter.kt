@@ -4,12 +4,27 @@ import android.content.Context
 import br.com.rafael.main.base.BasePresenter
 import br.com.rafael.main.model.User
 import br.com.rafael.main.repository.preferences.UserPreferencesHelper
+import br.com.rafael.main.ui.login.contracts.LoginActivityInput
+import br.com.rafael.main.ui.login.contracts.LoginPresenterInput
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import javax.inject.Inject
 
-class LoginPresenter(private val outputActivity: LoginActivityInput): BasePresenter(), LoginPresenterInput {
+class LoginPresenter(private val outputActivity: LoginActivityInput): BasePresenter(),
+    LoginPresenterInput {
 
+
+    override fun onError(err: Throwable) {
+        outputActivity.onError(err)
+    }
+
+    override fun showLoading() {
+        outputActivity.showLoading()
+    }
+
+    override fun hideLoading() {
+        outputActivity.hideLoading()
+    }
 
 
     @Inject
@@ -40,8 +55,6 @@ class LoginPresenter(private val outputActivity: LoginActivityInput): BasePresen
             }
 
         }
-
-
 
 
     }

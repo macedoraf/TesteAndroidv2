@@ -4,12 +4,15 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import br.com.rafael.main.ui.login.contracts.LoginActivityInput
 import br.com.rafael.testeandroidv2resourcerafael.R
 
 class LoginActivity : AppCompatActivity(), LoginActivityInput {
 
 
+
     lateinit var router:LoginRouter
+
     lateinit var interector:LoginInterector
 
     override fun validateLoginSuccess(isTrue: Boolean) {
@@ -33,5 +36,17 @@ class LoginActivity : AppCompatActivity(), LoginActivityInput {
     }
 
     override fun getContext(): Context  = baseContext
+
+    override fun onError(err: Throwable) {
+        Toast.makeText(this,err.message,Toast.LENGTH_LONG).show()
+    }
+
+    override fun showLoading() {
+       //TODO LOADING SHOW
+    }
+
+    override fun hideLoading() {
+        //TODO LOADING HIDE
+    }
 
 }

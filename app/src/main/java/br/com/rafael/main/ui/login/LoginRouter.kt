@@ -5,13 +5,15 @@ import android.content.Intent
 import br.com.rafael.main.base.BaseRouter
 import br.com.rafael.main.extension.isNotNull
 import br.com.rafael.main.ui.currency.CurrencyActivity
+import br.com.rafael.main.ui.login.contracts.LoginRouterInput
 import java.io.Serializable
 
 /**
  * Interface para inputar os dados para o router
  */
 
-class LoginRouter(private val activity:LoginActivity): BaseRouter(), LoginRouterInput {
+class LoginRouter(private val activity:LoginActivity): BaseRouter(),
+    LoginRouterInput {
 
 
     override fun showCurrencyScreen() {
@@ -28,7 +30,6 @@ class LoginRouter(private val activity:LoginActivity): BaseRouter(), LoginRouter
         return intent
     }
 
-    override fun getContext(): Context  = activity.baseContext
 
 
 }
