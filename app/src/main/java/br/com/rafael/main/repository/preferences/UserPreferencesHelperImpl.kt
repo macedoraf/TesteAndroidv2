@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 class UserPreferencesHelperImpl(context: Context,preferencesKey:String,
                                 private val sharedPreferences: SharedPreferences = context.
-                                getSharedPreferences(preferencesKey,Context.MODE_PRIVATE)):UserPreferencesHelper {
+                                getSharedPreferences(preferencesKey,Context.MODE_PRIVATE)): UserPreferencesHelper {
 
     private val USER_ID = "USER_ID"
     private val USER_NAME = "USER_NAME"

@@ -6,7 +6,7 @@ interface BaseView {
 
     fun getContext():Context
 
-    fun onError(err:Throwable)
+    fun onError(err:String)
 
     fun showLoading()
 

@@ -1,11 +1,11 @@
 package br.com.rafael.main.ui.login
 
-import android.content.Context
 import android.content.Intent
 import br.com.rafael.main.base.BaseRouter
 import br.com.rafael.main.extension.isNotNull
 import br.com.rafael.main.ui.currency.CurrencyActivity
 import br.com.rafael.main.ui.login.contracts.LoginRouterInput
+import br.com.rafael.main.util.KEY_LOGIN_TO_CURRENCY
 import java.io.Serializable
 
 /**
@@ -16,15 +16,18 @@ class LoginRouter(private val activity:LoginActivity): BaseRouter(),
     LoginRouterInput {
 
 
-    override fun showCurrencyScreen() {
-        showNextScreen(Intent(activity, CurrencyActivity::class.java))
+    override fun showCurrencyScreen(loginViewModel: LoginModel.LoginViewModel?) {
+        showNextScreen(passDataToNextScreen(Intent(activity, CurrencyActivity::class.java),loginViewModel,
+            KEY_LOGIN_TO_CURRENCY))
+
     }
+
 
     private fun showNextScreen(intent: Intent){
-        activity.startActivity(passDataToNextScreen(intent,null,null))
+        activity.startActivity(intent)
     }
 
-    private fun <T:Serializable> passDataToNextScreen(intent:Intent ,anyObject:T?,key:String?):Intent{
+    private fun <T:Serializable> passDataToNextScreen(intent:Intent ,anyObject:T?,key:String):Intent{
         if(anyObject.isNotNull() && key.isNotNull())
         intent.putExtra(key,anyObject)
         return intent
