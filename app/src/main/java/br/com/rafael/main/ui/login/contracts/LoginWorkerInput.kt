@@ -8,4 +8,6 @@ interface LoginWorkerInput {
     fun getLoginFromService(request: LoginModel.LoginRequest): Observable<LoginModel.LoginResponse>
 
     fun setLoginIntoPreferences(loginResponse:LoginModel.LoginResponse)
+
+    fun setInitializeUserData():String
 }

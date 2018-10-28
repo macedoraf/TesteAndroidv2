@@ -5,4 +5,6 @@ import br.com.rafael.main.ui.login.LoginModel
 interface LoginInterectorInput {
 
     fun requestLogin(loginRequest: LoginModel.LoginRequest)
+
+    fun setInitializeUserData()
 }

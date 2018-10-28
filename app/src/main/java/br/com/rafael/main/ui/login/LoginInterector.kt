@@ -10,7 +10,7 @@ import io.reactivex.schedulers.Schedulers
 class LoginInterector(private val presenter: LoginPresenterInput):BaseInterector(),
     LoginInterectorInput {
 
-     private val loginWorkerInput by lazy<LoginWorkerInput> { LoginWorker(presenter.getContext())}
+    private val loginWorkerInput by lazy<LoginWorkerInput> { LoginWorker(presenter.getContext())}
 
     override fun requestLogin(loginRequest: LoginModel.LoginRequest) {
         presenter.showLoading()
@@ -23,6 +23,12 @@ class LoginInterector(private val presenter: LoginPresenterInput):BaseInterector
                 presenter.onError(it.message!!)}))
 
 
+    }
+
+    override fun setInitializeUserData() {
+
+
+        presenter.setInitializeUserData(loginWorkerInput.setInitializeUserData())
     }
 
 }

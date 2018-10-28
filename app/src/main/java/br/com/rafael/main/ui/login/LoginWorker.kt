@@ -12,7 +12,6 @@ import javax.inject.Inject
 
 class LoginWorker(context: Context): BaseWorker(context), LoginWorkerInput {
 
-
     @Inject
     lateinit var userPreferences: UserPreferencesHelperImpl
 
@@ -21,13 +20,15 @@ class LoginWorker(context: Context): BaseWorker(context), LoginWorkerInput {
 
 
     override fun setLoginIntoPreferences(loginResponse: LoginModel.LoginResponse) {
-        if(loginResponse.user.isNotNull()) setUserIntoPreferences(loginResponse.user!!)
+        if(loginResponse.user.isNotNull()) setUserIntoPreferences(loginResponse.user)
 
     }
 
     override fun getLoginFromService(request: LoginModel.LoginRequest): Observable<LoginModel.LoginResponse> {
         return api.getLogin(request.login,request.password)
     }
+
+    override fun setInitializeUserData(): String = userPreferences.getUsuarioName()
 
     private fun setUserIntoPreferences (user: User){
         userPreferences.setAgency(user.agency)

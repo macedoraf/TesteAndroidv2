@@ -8,7 +8,6 @@ import br.com.rafael.main.ui.login.contracts.LoginPresenterInput
 class LoginPresenter(private val outputActivity: LoginActivityInput): BasePresenter(),
     LoginPresenterInput {
 
-
     override fun onError(err:String) {
         outputActivity.onError(err)
     }
@@ -29,6 +28,11 @@ class LoginPresenter(private val outputActivity: LoginActivityInput): BasePresen
         }
 
         outputActivity.validateLoginSuccess(response.toLoginViewModel())
+    }
+
+
+    override fun setInitializeUserData(user: String) {
+        outputActivity.setInitializeUserData(user)
     }
 
 

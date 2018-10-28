@@ -6,4 +6,6 @@ import br.com.rafael.main.ui.login.LoginModel
 interface LoginActivityInput:BaseView {
 
     fun validateLoginSuccess(loginModelView:LoginModel.LoginViewModel)
+
+    fun setInitializeUserData(user:String)
 }
