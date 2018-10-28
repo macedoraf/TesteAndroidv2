@@ -1,6 +1,7 @@
 package br.com.rafael.main.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class User(
     @SerializedName(value = "userId")val id:Long,
@@ -8,5 +9,5 @@ data class User(
     @SerializedName(value = "bankAccount")val bankAccount:String,
     @SerializedName(value = "agency")val agency:String,
     @SerializedName(value = "balance")val balance:Float
-) {
+):Serializable {
 }
