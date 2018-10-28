@@ -6,5 +6,5 @@ interface LoginInterectorInput {
 
     fun requestLogin(loginRequest: LoginModel.LoginRequest)
 
-    fun setInitializeUserData()
+    fun fetchUserData()
 }

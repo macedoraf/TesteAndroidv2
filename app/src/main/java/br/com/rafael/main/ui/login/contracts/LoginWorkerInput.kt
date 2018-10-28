@@ -9,5 +9,5 @@ interface LoginWorkerInput {
 
     fun setLoginIntoPreferences(loginResponse:LoginModel.LoginResponse)
 
-    fun setInitializeUserData():String
+    fun fetchUserData():String
 }

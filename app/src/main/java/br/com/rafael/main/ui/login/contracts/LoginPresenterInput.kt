@@ -5,9 +5,10 @@ import br.com.rafael.main.ui.login.LoginModel
 
 
 interface LoginPresenterInput: BaseView {
+
     fun presentLoginMetaData(response: LoginModel.LoginResponse)
 
-    fun setInitializeUserData(user:String)
+    fun fetchUserData(user:String)
 
 
 }

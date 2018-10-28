@@ -7,7 +7,7 @@ data class ErrorService(@SerializedName(value = "code")val code:Int, @Serialized
 
     fun toErrorLog(tag:String):String{
         val errorFormated = "[$code] $menssage"
-        Log.e(tag,errorFormated)
+        Log.e("SrvErro","$tag $errorFormated")
         return errorFormated
     }
 }

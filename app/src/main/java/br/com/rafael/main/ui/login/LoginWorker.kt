@@ -28,7 +28,7 @@ class LoginWorker(context: Context): BaseWorker(context), LoginWorkerInput {
         return api.getLogin(request.login,request.password)
     }
 
-    override fun setInitializeUserData(): String = userPreferences.getUsuarioName()
+    override fun fetchUserData(): String = userPreferences.getUsuarioName()
 
     private fun setUserIntoPreferences (user: User){
         userPreferences.setAgency(user.agency)

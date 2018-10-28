@@ -16,7 +16,7 @@ class UserPreferencesHelperImpl(context: Context,preferencesKey:String,
 
 
     override fun setUsuarioId(id: Long) {
-
+        putValue(USER_ID,id)
     }
 
     override fun getUsuarioId(): Long = sharedPreferences.getLong(USER_ID,0)
@@ -46,8 +46,9 @@ class UserPreferencesHelperImpl(context: Context,preferencesKey:String,
     override fun getBalance(): Float = sharedPreferences.getFloat(USER_BALANCE,0F)
 
 
-    private fun putValue(key:String,value:Any):Boolean{
+    private fun putValue(key:String,value:Any){
         val edit = sharedPreferences.edit()
+        edit.clear()
         when(value){
 
             is Boolean ->{
@@ -71,7 +72,7 @@ class UserPreferencesHelperImpl(context: Context,preferencesKey:String,
             }
         }
 
-        return edit.commit()
+        edit.apply()
 
     }
 }

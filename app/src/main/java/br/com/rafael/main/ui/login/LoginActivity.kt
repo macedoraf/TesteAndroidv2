@@ -8,7 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import br.com.rafael.main.extension.*
 import br.com.rafael.main.ui.login.contracts.LoginActivityInput
+import br.com.rafael.main.ui.currency.contracts.CurrencyInterectorInput
 import br.com.rafael.main.ui.login.contracts.LoginInterectorInput
 import br.com.rafael.main.ui.login.contracts.LoginRouterInput
 import br.com.rafael.testeandroidv2resourcerafael.R
@@ -19,7 +21,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityInput {
 
     var router:LoginRouterInput? = null
 
-    var interector:LoginInterectorInput? = null
+    var interector: LoginInterectorInput? = null
 
     private lateinit var btnLogin:Button
 
@@ -38,12 +40,17 @@ class LoginActivity : AppCompatActivity(), LoginActivityInput {
         setContentView(R.layout.activity_login)
         LoginConfigurator.INSTANCE.cofigure(this)
         initView()
-        setInitializeUserData()
         setListeners()
     }
 
+    override fun onResume() {
+        super.onResume()
+        setInitializeUserData()
+
+    }
+
     private fun setInitializeUserData() {
-        interector?.setInitializeUserData()
+        interector?.fetchUserData()
     }
 
 
@@ -57,14 +64,38 @@ class LoginActivity : AppCompatActivity(), LoginActivityInput {
 
     private fun setListeners() {
         btnLogin.setOnClickListener {
-            interector?.requestLogin(LoginModel.LoginRequest(edtUser.text.toString(),edtPassword.text.toString()))
+            actionOnClickLogin()
         }
     }
 
 
-    private fun showCurrencyScreen(loginModelView: LoginModel.LoginViewModel){
-        router?.showCurrencyScreen(loginModelView)
+    private fun isValidForm(user:String, password:String): Boolean {
+
+
+        if(!user.isCPF() && !user.isEmail()){
+            Toast.makeText(this,R.string.alert_valid_email_cpf,Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(!password.hasOneNumber() || !password.hasOneSpecialCaracter() || !password.hasOneUppercase()){
+            Toast.makeText(this,R.string.alert_valid_password,Toast.LENGTH_LONG).show()
+            return false
+        }
+        return true
+
     }
+
+    private fun actionOnClickLogin() {
+        val user = edtUser.text.toString()
+        val password = edtPassword.text.toString()
+        if (isValidForm(user, password))
+            interector?.requestLogin(LoginModel.LoginRequest(user, password))
+    }
+
+
+
+    private fun showCurrencyScreen(loginModelView: LoginModel.LoginViewModel){
+        router?.showCurrencyScreen(loginModelView) }
 
     override fun getContext(): Context  = baseContext
 
@@ -80,7 +111,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityInput {
         progressBar.visibility = View.GONE
     }
 
-    override fun setInitializeUserData(user: String) {
+    override fun fetchUserData(user: String) {
         edtUser.setText(user)
     }
 

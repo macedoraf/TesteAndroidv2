@@ -1,6 +1,7 @@
 package br.com.rafael.main.ui.login
 
 import br.com.rafael.main.extension.isNull
+import br.com.rafael.main.ui.currency.CurrencyInterector
 
 enum class LoginConfigurator {
     INSTANCE;

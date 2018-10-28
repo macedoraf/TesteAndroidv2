@@ -31,8 +31,8 @@ class LoginPresenter(private val outputActivity: LoginActivityInput): BasePresen
     }
 
 
-    override fun setInitializeUserData(user: String) {
-        outputActivity.setInitializeUserData(user)
+    override fun fetchUserData(user: String) {
+        outputActivity.fetchUserData(user)
     }
 
 

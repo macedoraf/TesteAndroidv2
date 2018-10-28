@@ -5,6 +5,7 @@ import br.com.rafael.main.di.components.DaggerWorkerInjector
 import br.com.rafael.main.di.components.WorkerInjector
 import br.com.rafael.main.di.module.NetworkModule
 import br.com.rafael.main.di.module.PreferencesModule
+import br.com.rafael.main.ui.currency.CurrecyWorker
 import br.com.rafael.main.ui.login.LoginWorker
 
 abstract class BaseWorker(context: Context) {
@@ -26,6 +27,8 @@ abstract class BaseWorker(context: Context) {
     private fun inject() {
         when(this){
             is LoginWorker -> injector.injectLoginWorker(this)
+
+            is CurrecyWorker -> injector.injectCurrecyWorker(this)
         }
     }
 
