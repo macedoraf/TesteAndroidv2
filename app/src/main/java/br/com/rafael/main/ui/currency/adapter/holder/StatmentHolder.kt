@@ -3,6 +3,7 @@ package br.com.rafael.main.ui.currency.adapter.holder
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
+import br.com.rafael.main.extension.formatDate
 import br.com.rafael.main.extension.toMoney
 import br.com.rafael.main.ui.currency.StatmentModel
 import br.com.rafael.testeandroidv2resourcerafael.R
@@ -14,7 +15,7 @@ class StatmentHolder(itemView: View,
 
     fun bind(statment: StatmentModel.StatmentViewModel){
         lblDescricao.text = statment.des
-        lblData.text = statment.date
+        lblData.text = statment.date?.formatDate()
         lblValor.text = statment.value.toMoney()
     }
 

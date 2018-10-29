@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.constraint.ConstraintLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
 
             <TextView
-                android:id="@+id/lbl_account_agency"
-                style="@style/AppTheme.FonteHalvetica.Branco"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:text="@string/moc_conta"
-                android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="@+id/lblTituloConta"
-                app:layout_constraintTop_toBottomOf="@+id/lblTituloConta" />
+                    android:id="@+id/lbl_account_agency"
+                    style="@style/AppTheme.FonteHalvetica.Branco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/moc_conta"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="@+id/lblTituloConta"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTituloConta" />
 
             <TextView
                     android:id="@+id/lblTituloConta"
@@ -38,14 +38,14 @@
                     app:layout_constraintTop_toBottomOf="@id/toolbar"/>
 
             <TextView
-                android:id="@+id/lblTituloSaldo"
-                style="@style/AppTheme.FonteHalvetica.Branco"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="@string/saldo"
-                app:layout_constraintStart_toStartOf="@+id/lbl_account_agency"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_account_agency" />
+                    android:id="@+id/lblTituloSaldo"
+                    style="@style/AppTheme.FonteHalvetica.Branco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/saldo"
+                    app:layout_constraintStart_toStartOf="@+id/lbl_account_agency"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_account_agency" />
 
             <TextView
                     android:id="@+id/lbl_value_currency"
@@ -62,27 +62,27 @@
 
             <android.support.v7.widget.Toolbar
                     app:titleTextAppearance="@style/Toolbar.TitleText"
-                app:titleTextColor="@color/branco"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:title="@string/moc_nome_usuario" />
+                    app:titleTextColor="@color/branco"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:title="@string/moc_nome_usuario" />
 
 
             <!--<android.support.design.widget.CollapsingToolbarLayout-->
-                <!--android:id="@+id/collapsingToolbarLayout"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="8dp"-->
-                <!--app:titleEnabled="true"-->
-                <!--app:expandedTitleTextAppearance="@android:color/transparent"-->
-                <!--app:layout_constraintEnd_toEndOf="parent"-->
-                <!--app:layout_constraintStart_toStartOf="parent"-->
-                <!--app:layout_constraintTop_toTopOf="parent"-->
-                <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+            <!--android:id="@+id/collapsingToolbarLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--app:titleEnabled="true"-->
+            <!--app:expandedTitleTextAppearance="@android:color/transparent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
 
 
             <!--</android.support.design.widget.CollapsingToolbarLayout>-->
@@ -94,15 +94,15 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:context="br.com.rafael.main.ui.currency.CurrencyActivityInput">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context="br.com.rafael.main.ui.currency.CurrencyActivityInput">
 
             <TextView
                     android:id="@+id/lblTituloRecentes"

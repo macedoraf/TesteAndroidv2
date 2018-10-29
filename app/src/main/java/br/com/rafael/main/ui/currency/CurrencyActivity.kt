@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.Toolbar
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
-import android.widget.Adapter
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
-import br.com.rafael.main.extension.isNotNull
+import android.widget.*
 import br.com.rafael.main.extension.isNull
 import br.com.rafael.main.extension.toMoney
 import br.com.rafael.main.ui.currency.adapter.StatmentAdapter
@@ -30,6 +29,7 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
     private lateinit var adapter:StatmentAdapter
     private lateinit var progressBar: ProgressBar
     private lateinit var listStatmentViewModel:MutableList<StatmentModel.StatmentViewModel>
+    private lateinit var toolbar:Toolbar
 
     var interectorInput:CurrencyInterectorInput? = null
 
@@ -84,6 +84,7 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
         lblValueCurrency = findViewById(R.id.lbl_value_currency)
         recyclerViewCurrency = findViewById(R.id.rv_currency)
         progressBar = findViewById(R.id.progress_bar)
+        toolbar = findViewById(R.id.toolbar)
 
 
     }
@@ -106,7 +107,7 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
         progressBar.visibility = View.GONE
     }
 
-    fun updateAdapter(){
+    private fun updateAdapter(){
         adapter.notifyDataSetChanged()
     }
 
@@ -115,6 +116,20 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
         this.listStatmentViewModel.clear()
         this.listStatmentViewModel.addAll(listStatmentViewModel)
         this.updateAdapter()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_currency, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        when(item?.itemId){
+            R.id.action_logout -> currencyRouter?.showLoginScreen()
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 

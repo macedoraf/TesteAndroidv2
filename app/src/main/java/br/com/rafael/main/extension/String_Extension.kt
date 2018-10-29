@@ -39,14 +39,14 @@ fun String.isCPF(): Boolean {
 }
 
 fun String.hasOneUppercase():Boolean {
-    val pattern = Pattern.compile("[A-z]")
+    val pattern = Pattern.compile("[A-Z]")
     val matcher = pattern.matcher(this)
     val aboolean = matcher.find()
     return aboolean
 }
 
 fun String.hasOneNumber():Boolean{
-    val pattern = Pattern.compile("")
+    val pattern = Pattern.compile("[0-9]")
     val matcher = pattern.matcher(this)
     val aboolean = matcher.find()
     return aboolean
@@ -57,5 +57,19 @@ fun String.hasOneSpecialCaracter():Boolean{
     val matcher = pattern.matcher(this)
     val aboolean = matcher.find()
     return aboolean
+}
+
+fun String.formatDate():String{
+    val split = this.split("-")
+    val sbDate = StringBuilder()
+    var i = split.size - 1
+    while (i <= split.size && i>-1){
+        sbDate.append(split[i])
+        if(i > 0)
+            sbDate.append("/")
+
+        i--
+    }
+    return sbDate.toString()
 
 }
