@@ -37,6 +37,9 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
 
     val userViewModel by lazy { this.intent.extras?.getSerializable(KEY_LOGIN_TO_CURRENCY) as LoginModel.LoginViewModel }
 
+    /**
+     *
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_currency)
@@ -46,10 +49,13 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
         setupRecyclerView()
         setupAdapter()
         initValues()
-
+        setupToolbar()
 
     }
 
+    /**
+     *
+     */
     private fun initValues() {
         if(userViewModel.isNull())
             return
@@ -58,6 +64,9 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
         lblValueCurrency.text = "${userViewModel.balance.toMoney()}"
     }
 
+    /**
+     *
+     */
     override fun onResume() {
         super.onResume()
         fetchStatmentViewModelList()
@@ -65,20 +74,32 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
 
     }
 
+    /**
+     *
+     */
     private fun fetchStatmentViewModelList() {
        interectorInput?.fetchStatementList()
     }
 
+    /**
+     *
+     */
     private fun setupAdapter() {
         adapter = StatmentAdapter(this)
         recyclerViewCurrency.adapter = adapter
 
     }
 
+    /**
+     *
+     */
     private fun setupRecyclerView() {
         recyclerViewCurrency.layoutManager = LinearLayoutManager(this)
     }
 
+    /**
+     *
+     */
     private fun initViews() {
         lblAccountAgency = findViewById(R.id.lbl_account_agency)
         lblValueCurrency = findViewById(R.id.lbl_value_currency)
@@ -87,6 +108,22 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
         toolbar = findViewById(R.id.toolbar)
 
 
+
+
+
+    }
+
+    /**
+     *
+     */
+    private fun setupToolbar() {
+        toolbar.inflateMenu(R.menu.menu_currency)
+        toolbar.setOnMenuItemClickListener {
+
+            currencyRouter?.showLoginScreen()
+
+            return@setOnMenuItemClickListener true
+        }
     }
 
 
@@ -121,15 +158,6 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_currency, menu)
         return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-
-        when(item?.itemId){
-            R.id.action_logout -> currencyRouter?.showLoginScreen()
-        }
-
-        return super.onOptionsItemSelected(item)
     }
 
 
