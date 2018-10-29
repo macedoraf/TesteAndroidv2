@@ -20,6 +20,8 @@ class LoginInterector(private val presenter: LoginPresenterInput):BaseInterector
             .subscribe({
                 presenter.presentLoginMetaData(it)
                 loginWorkerInput.setLoginIntoPreferences(it)
+                loginWorkerInput.setUsernameIntoPreferences(loginRequest.login)
+
             },{
                 it.printStackTrace()
                 presenter.onError(it.message!!)}))

@@ -7,11 +7,22 @@ class UserPreferencesHelperImpl(context: Context,preferencesKey:String,
                                 private val sharedPreferences: SharedPreferences = context.
                                 getSharedPreferences(preferencesKey,Context.MODE_PRIVATE)): UserPreferencesHelper {
 
+
     private val USER_ID = "USER_ID"
     private val USER_NAME = "USER_NAME"
     private val USER_BANK_ACCOUNT = "USER_BANK_ACCOUNT"
     private val USER_AGENCY = "USER_AGENCY"
     private val USER_BALANCE = "USER_BALANCE"
+    private val USER_USERNAME = "USER_USERNAME"
+
+
+    override fun setUsername(username: String) {
+        putValue(USER_USERNAME,username)
+    }
+
+    override fun getUsername(): String {
+        return sharedPreferences.getString(USER_USERNAME,"")!!
+    }
 
 
 
@@ -22,7 +33,7 @@ class UserPreferencesHelperImpl(context: Context,preferencesKey:String,
     override fun getUsuarioId(): Long = sharedPreferences.getLong(USER_ID,0)
 
     override fun setUsuarioName(name: String) {
-        putValue(USER_ID,name)
+        putValue(USER_NAME,name)
     }
 
     override fun getUsuarioName(): String = sharedPreferences.getString(USER_NAME,"")!!

@@ -12,6 +12,7 @@ import javax.inject.Inject
 
 class LoginWorker(context: Context): BaseWorker(context), LoginWorkerInput {
 
+
     @Inject
     lateinit var userPreferences: UserPreferencesHelperImpl
 
@@ -28,7 +29,12 @@ class LoginWorker(context: Context): BaseWorker(context), LoginWorkerInput {
         return api.getLogin(request.login,request.password)
     }
 
-    override fun fetchUserData(): String = userPreferences.getUsuarioName()
+    override fun fetchUserData(): String = userPreferences.getUsername()
+
+    override fun setUsernameIntoPreferences(username: String) {
+        userPreferences.setUsername(username)
+    }
+
 
     private fun setUserIntoPreferences (user: User){
         userPreferences.setAgency(user.agency)

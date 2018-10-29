@@ -21,4 +21,8 @@ interface UserPreferencesHelper {
     fun setBalance(balance:Float)
 
     fun getBalance():Float
+
+    fun setUsername(user:String)
+
+    fun getUsername():String
 }
