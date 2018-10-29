@@ -12,5 +12,5 @@ interface API {
     fun getLogin(@Field("user") user:String,@Field("password") password:String):Observable<LoginModel.LoginResponse>
 
     @GET("statements/{id}")
-    fun getStatmentList(@Path("id") id:Int):Observable<StatmentModel.StatmentResponse>
+    fun getStatmentList(@Path("id") id:Long):Observable<StatmentModel.StatmentResponse>
 }

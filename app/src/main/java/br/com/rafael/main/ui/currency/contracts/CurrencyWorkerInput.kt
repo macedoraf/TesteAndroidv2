@@ -5,5 +5,5 @@ import io.reactivex.Observable
 
 interface CurrencyWorkerInput {
 
-    fun fetchStatementList():Observable<StatmentModel.StatmentResponse>
+    fun fetchStatementList(id:Long):Observable<StatmentModel.StatmentResponse>
 }

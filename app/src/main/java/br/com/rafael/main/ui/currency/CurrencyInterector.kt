@@ -12,9 +12,9 @@ class CurrencyInterector(private val presenter: CurrencyPresenterInput):BaseInte
 
     private val currencyWorkerInput by lazy<CurrencyWorkerInput> { CurrecyWorker(presenter.getContext())}
 
-    override fun fetchStatementList() {
+    override fun fetchStatementList(id:Long) {
         presenter.showLoading()
-        addSubscription(currencyWorkerInput.fetchStatementList()
+        addSubscription(currencyWorkerInput.fetchStatementList(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnTerminate{presenter.hideLoading()}

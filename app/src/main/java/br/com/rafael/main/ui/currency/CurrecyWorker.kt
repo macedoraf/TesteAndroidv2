@@ -14,8 +14,8 @@ class CurrecyWorker(context: Context) : CurrencyWorkerInput, BaseWorker(context)
     lateinit var api: API
 
 
-    override fun fetchStatementList(): Observable<StatmentModel.StatmentResponse> {
-        return api.getStatmentList(1)
+    override fun fetchStatementList(id:Long): Observable<StatmentModel.StatmentResponse> {
+        return api.getStatmentList(id)
     }
 
 }

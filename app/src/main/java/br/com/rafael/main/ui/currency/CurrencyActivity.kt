@@ -69,7 +69,7 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
      */
     override fun onResume() {
         super.onResume()
-        fetchStatmentViewModelList()
+        fetchStatmentViewModelList(userViewModel.id)
 
 
     }
@@ -77,8 +77,8 @@ class CurrencyActivity : AppCompatActivity(), CurrencyActivityInput {
     /**
      *
      */
-    private fun fetchStatmentViewModelList() {
-       interectorInput?.fetchStatementList()
+    private fun fetchStatmentViewModelList(id:Long) {
+       interectorInput?.fetchStatementList(id)
     }
 
     /**
