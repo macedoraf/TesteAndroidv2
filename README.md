@@ -29,7 +29,3 @@ Anko
 Google Design
 
 Biblioteca de design da google para trazer appbars, constrain layouts e etc, acredito que não há muito o que justificar.
-
-Mokito
-
-Não tenho muita experiência com testes, porém o que eu estudei até agora é feito no mokito, ele te dá os mocks para substituir comportamentos de componentes da framework e instâncias de objetos que você vai precisar para testar seus métodos.
